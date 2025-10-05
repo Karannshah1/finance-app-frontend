@@ -1,23 +1,23 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from './components/LoginPage';
-import OAuthCallback from './components/OAuthCallback';
-import Dashboard from './components/Dashboard';
-import Register from './components/Register';
-import Sender from './components/Sender';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import OAuth2RedirectHandler from './components/OAuth2RedirectHandler';
+// ... import your other components like Login, Dashboard, etc.
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/sender" element={<Sender />} />
+        {/* Your other routes */}
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register/>} />
-        <Route path="/oauth2/callback" element={<OAuthCallback />} />
+        <Route path="/sender" element={<Sender />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        
+        {/* Add the new route for handling the OAuth2 redirect */}
+        <Route path="/oauth2/redirect" element={<OAuth2RedirectHandler />} />
+        
+        {/* ... other routes ... */}
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
-
-export default App;
