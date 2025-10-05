@@ -91,7 +91,9 @@ const RetrieveText = () => {
         setCopySuccess('');
 
         try {
-            const apiUrl = `${process.env.REACT_APP_API_URL}/text/${number}`;
+            const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8091/api';
+            const apiUrl = `${API_URL}/sender/text/${number}`;
+
             const response = await axios.get(apiUrl, {
                 responseType: 'text' // Important: Expect plain text
             });

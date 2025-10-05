@@ -5,7 +5,9 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
 
   const handleNormalLogin = async () => {
-    const res = await fetch("http://localhost:8091/api/auth/login", {
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8091/api/';
+
+    const res = await fetch(`${API_URL}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
