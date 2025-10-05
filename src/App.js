@@ -15,6 +15,7 @@ function App() {
         <Route path="/register" element={<Register/>} />
         <Route path="/sender" element={<Sender />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Dashboard />} />
         
         {/* Add the new route for handling the OAuth2 redirect */}
         <Route path="/oauth2/redirect" element={<OAuth2RedirectHandler />} />

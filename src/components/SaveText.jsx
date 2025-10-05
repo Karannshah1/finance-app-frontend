@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 // IMPORTANT: Replace this with your deployed backend URL
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8091/api/sender';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8091/api/';
 
 const SaveText = () => {
     const [text, setText] = useState('');
@@ -22,7 +22,7 @@ const SaveText = () => {
         setAssignedNumber(null);
 
         try {
-            const response = await axios.post(`${API_URL}/text`, { text });
+            const response = await axios.post(`${API_URL}/sender/text`, { text });
             setAssignedNumber(response.data.number);
             setText(''); // Clear the textarea after successful submission
         } catch (err) {
