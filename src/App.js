@@ -1,7 +1,10 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import OAuth2RedirectHandler from './components/OAuth2RedirectHandler';
-// ... import your other components like Login, Dashboard, etc.
+import Login from './components/LoginPage';
+import Register from './components/Register';
+import Sender from './components/Sender';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
