@@ -22,7 +22,11 @@ export default function LoginPage() {
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleGoogleLogin = () => {
-    const googleLoginUrl = "http://localhost:8091/oauth2/authorization/google";
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8091/api/';
+
+    // const googleLoginUrl =  "http://localhost:8091/oauth2/authorization/google";
+    const googleLoginUrl =  "https://finance-app-backend-kqxu.onrender.com/oauth2/authorization/google";
+
 
     const finalUrl = rememberMe 
       ? `${googleLoginUrl}?remember-me=true` 
