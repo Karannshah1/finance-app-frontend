@@ -5,7 +5,7 @@ import Login from './components/LoginPage';
 import Register from './components/Register';
 import Sender from './components/Sender';
 import Dashboard from './components/Dashboard';
-import axios;
+
 
 const url = process.env.REACT_APP_API_URL; // Replace with your Render URL
 const interval = 30000; // Interval in milliseconds (30 seconds)
