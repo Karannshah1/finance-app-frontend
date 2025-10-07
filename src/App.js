@@ -8,7 +8,7 @@ import Dashboard from './components/Dashboard';
 import axios from 'axios';
 
 
-const url = process.env.REACT_APP_API_URL; // Replace with your Render URL
+const url = process.env.REACT_APP_API_URL+"/sender"; // Replace with your Render URL
 const interval = 30000; // Interval in milliseconds (30 seconds)
 
 //Reloader Function
