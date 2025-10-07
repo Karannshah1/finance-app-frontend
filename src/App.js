@@ -5,6 +5,7 @@ import Login from './components/LoginPage';
 import Register from './components/Register';
 import Sender from './components/Sender';
 import Dashboard from './components/Dashboard';
+import axios from 'axios';
 
 
 const url = process.env.REACT_APP_API_URL; // Replace with your Render URL
@@ -12,12 +13,18 @@ const interval = 30000; // Interval in milliseconds (30 seconds)
 
 //Reloader Function
 function reloadWebsite() {
-
-  const res = await fetch(url);
-
+  axios.get(url)
+    .then(response => {
+      console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
+    })
+    .catch(error => {
+      console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
+    });
 }
 
 setInterval(reloadWebsite, interval);
+
+
 
 
 function App() {
