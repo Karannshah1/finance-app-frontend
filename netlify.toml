@@ -1,0 +1,22 @@
+# This file configures the build, redirect, and function settings for Netlify.
+
+# 1. Build Settings
+# This section tells Netlify how to build your site.
+[build]
+  command = "npm run build"
+  publish = "build"
+
+# 2. Redirect Rule for Single Page Applications (SPA)
+# This is critical for ensuring your routes like /dashboard work correctly.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# 3. Scheduled Function Configuration
+[functions]
+  # This section targets the pinger.js file inside your /netlify/functions/ directory.
+  [functions.pinger]
+    # This cron expression runs the pinger function every minute.
+    schedule = "* * * * *"
+
